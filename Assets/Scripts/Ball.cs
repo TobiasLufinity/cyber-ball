@@ -21,7 +21,6 @@ public class Ball : MonoBehaviour
         ballToPaddleDifference = transform.position - paddle.transform.position;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         soundSource = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
@@ -64,20 +63,18 @@ public class Ball : MonoBehaviour
             }
             if (collision.gameObject.name == "Paddle")
             {
-                //ContactPoint2D contact = collision.contacts[0];
-                //Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
-                //Vector3 position = contact.point;
-                //float impact = position.x;
-                //float paddlePosX = paddle.transform.position.x;
-                //// Impact Paddle is a range from -1 to 1
-                //float impactOnPaddle = impact - paddlePosX;
-                //// Force x and y is between -10 and 10
-                //float newXVelocity = Mathf.Clamp(10 * impactOnPaddle, -10, 10);
-                //float newYVelocity = 10 - (newXVelocity > 0 ? newXVelocity : newXVelocity * -1);
-                //Debug.Log(newXVelocity);
-                //Debug.Log(newYVelocity);
-                //Vector2 forceChange = new Vector2(newXVelocity, newYVelocity);
-                //GetComponent<Rigidbody2D>().velocity = forceChange;
+                ContactPoint2D contact = collision.contacts[0];
+                Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+                Vector3 position = contact.point;
+                float impact = position.x;
+                float paddlePosX = paddle.transform.position.x;
+                // Impact Paddle is a range from -1 to 1
+                float impactOnPaddle = Mathf.Clamp(impact - paddlePosX, -1f, 1f);
+                // Force x and y is between -10 and 10
+                float newXVelocity = Mathf.Clamp(10 * impactOnPaddle, -10f, 10f);
+                rb2D.velocity = new Vector2(newXVelocity, rb2D.velocity.y);
+                rb2D.velocity = rb2D.velocity.normalized * 10;
+
             }
         }
     }
