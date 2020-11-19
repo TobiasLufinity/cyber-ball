@@ -54,4 +54,15 @@ public class GameSession : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public float GetGameSpeed()
+    {
+        return gameSpeed;
+    }
+
+    public void SetGameSpeed(float speed)
+    {
+        gameSpeed = speed;
+    }
+
 }

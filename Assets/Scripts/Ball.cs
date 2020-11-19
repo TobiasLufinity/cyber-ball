@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     private Vector2 ballToPaddleDifference;
     private Rigidbody2D rb2D;
     private bool inPlay = false;
+    private Vector2 currentVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class Ball : MonoBehaviour
             LockBallToPaddle();
             LaunchOnMouseClick();
         }
+        currentVelocity = rb2D.velocity;
     }
 
     private void LockBallToPaddle()
@@ -44,7 +46,7 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             inPlay = true;
-            rb2D.AddForce(transform.up * launchForce, ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(1f, 9f), ForceMode2D.Impulse);
         }
     }
 
@@ -64,7 +66,6 @@ public class Ball : MonoBehaviour
             if (collision.gameObject.name == "Paddle")
             {
                 ContactPoint2D contact = collision.contacts[0];
-                Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
                 Vector3 position = contact.point;
                 float impact = position.x;
                 float paddlePosX = paddle.transform.position.x;
@@ -74,8 +75,12 @@ public class Ball : MonoBehaviour
                 float newXVelocity = Mathf.Clamp(10 * impactOnPaddle, -10f, 10f);
                 rb2D.velocity = new Vector2(newXVelocity, rb2D.velocity.y);
                 rb2D.velocity = rb2D.velocity.normalized * 10;
-
             }
         }
+    }
+
+    public bool IsInPlay()
+    {
+        return inPlay;
     }
 }

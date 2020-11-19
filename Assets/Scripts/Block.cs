@@ -9,11 +9,13 @@ public class Block : MonoBehaviour
 
     private Level level;
     private GameSession gameStatus;
+    private PowerUps powerUps;
 
     private void Start()
     {
         level = FindObjectOfType<Level>();
         gameStatus = FindObjectOfType<GameSession>();
+        powerUps = FindObjectOfType<PowerUps>();
         level.AddBlock();
     }
 
@@ -21,6 +23,7 @@ public class Block : MonoBehaviour
     {
         level.BlockDestroyed();
         gameStatus.AddToScore(1);
+        powerUps.Launch(transform.position, collision.relativeVelocity);
         AudioSource.PlayClipAtPoint(destroySound, Camera.main.transform.position, 1.0f);
         Destroy(gameObject);
     }

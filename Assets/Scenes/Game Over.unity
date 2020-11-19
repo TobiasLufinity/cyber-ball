@@ -945,7 +945,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Duess Ball
+  m_text: 'Cyber Ball
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ef3375faaafcc794394eaddcc83d4ecc, type: 2}
   m_sharedMaterial: {fileID: -5031482688012448291, guid: ef3375faaafcc794394eaddcc83d4ecc,

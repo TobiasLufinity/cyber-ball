@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2543894811043197251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2543894811043197249}
+  - component: {fileID: 2543894811043197248}
+  - component: {fileID: 8787158401300267066}
+  m_Layer: 0
+  m_Name: PowerUps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2543894811043197249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543894811043197251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.4872785, y: 5.6558094, z: -2.5097656}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2543894811043197248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543894811043197251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c40e26dcbb2ccb4283ccf03c937dfd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 757492716055396923, guid: 0b8a21976ec90a5459b1dfb46dc052d4, type: 3}
+  SpriteBlowUp: {fileID: 21300000, guid: 4920474c93e14404e8ffc9b3e373dbfe, type: 3}
+  SpriteComet: {fileID: 21300000, guid: da37a272cf59f0c4da769cd0aa7f1a45, type: 3}
+  SpriteBallGraber: {fileID: 21300000, guid: db732ffe247976241bae1f600286c239, type: 3}
+  SpriteExpandExplosion: {fileID: 21300000, guid: 4d2349abc00f9604bae69bf671150a81,
+    type: 3}
+  SpriteExtraLife: {fileID: 21300000, guid: df8558e0199919a42b0ff9dbbbc88f3d, type: 3}
+  SpriteFalling: {fileID: 21300000, guid: 8bb5ac4ede06eaf4b95665c2126ae97f, type: 3}
+  SpriteFaster: {fileID: 21300000, guid: 758039a94d560cb47bd044290b7761c8, type: 3}
+  SpriteFinishLevel: {fileID: 21300000, guid: d0af7305c11e6184088e39043b73bba3, type: 3}
+  SpriteKill: {fileID: 21300000, guid: d6c7cd43222a0f847a6e8a0218f8ea9c, type: 3}
+  SpriteLasers: {fileID: 21300000, guid: a9421e83a1ebe0f4992b0b8b6dfbe2a1, type: 3}
+  SpriteSlowBall: {fileID: 21300000, guid: 1dc7f7bf122f00c47ac73df3dddeda34, type: 3}
+  SpriteSmallBall: {fileID: 21300000, guid: eac04d517ff8a9b4289702615f4dd1f8, type: 3}
+  SpriteSmallerPaddle: {fileID: 21300000, guid: 9c1d3daddfd67ea4fa8b31c778175e0f,
+    type: 3}
+  SpriteWiderPaddle: {fileID: 21300000, guid: b7cd398a86769b5438ee84e33c797a3d, type: 3}
+  SpriteSuperSmallPaddle: {fileID: 21300000, guid: c1751e7c0a512b740846bcd3ccf55f40,
+    type: 3}
+  SpriteThru: {fileID: 21300000, guid: 39ded4cbb24873d40a8c8d61a313bc85, type: 3}
+  SpriteZap: {fileID: 21300000, guid: 9ed2140be505cf24e8083b0a1f9a5694, type: 3}
+  SpriteSplit: {fileID: 21300000, guid: 72c96224074122a499322e1b6b91383b, type: 3}
+  chance: 50
+--- !u!114 &8787158401300267066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543894811043197251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1791ec2db3285544ab3952add75f8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
